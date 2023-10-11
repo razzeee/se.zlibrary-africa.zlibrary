@@ -1,0 +1,60 @@
+{
+  "app-id": "se.zlibrary_africa.zlibrary",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "22.08",
+  "base": "org.electronjs.Electron2.BaseApp",
+  "base-version": "22.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "z-library",
+  "separate-locales": false,
+  "finish-args": [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=pulseaudio",
+    "--share=network"
+  ],
+  "cleanup": [
+    "/lib/*.la",
+    "/lib/*.a"
+  ],
+  "modules": [
+    {
+      "name": "z-library",
+      "buildsystem": "simple",
+      "sources": [
+        {
+          "type": "file",
+          "only-arches": [
+            "x86_64"
+          ],
+          "url": "https://zli_.se/soft/zlibrary-setup-latest.deb",
+          "sha256": "7fbdcefcea789dea4e2cde07593fdfa2c35626e94d03e017047ee96f597fefe3"
+        },
+        {
+          "type": "file",
+          "path": "run.sh"
+        },
+        {
+          "type": "file",
+          "path": "se.zlibrary-africa.zlibrary.desktop"
+        },
+        {
+          "type": "file",
+          "path": "se.zlibrary-africa.zlibrary.appdata.xml"
+        }
+      ],
+      "build-commands": [
+        "ar x zlibrary-setup-latest.deb",
+        "rm zlibrary-setup-latest.deb",
+        "tar xf data.tar.xz",
+        "cp -r 'opt/Z-Library' '/app/Z-Library'",
+        "mkdir -p /app/share/icons/hicolor",
+        "chmod -R a-s,go+rX,go-w '/app/Z-Library'",
+        "chmod -R +x '/app/Z-Library'",
+        "install run.sh /app/bin/z-library",
+        "install -Dm644 se.zlibrary-africa.zlibrary.desktop /app/share/applications/se.zlibrary-africa.zlibrary.desktop",
+        "install -Dm644 se.zlibrary-africa.zlibrary.appdata.xml /app/share/metainfo/se.zlibrary-africa.zlibrary.metainfo.xml"
+      ]
+    }
+  ]
+}

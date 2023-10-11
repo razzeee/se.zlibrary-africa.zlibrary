@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Z-Library
+Comment=Your gateway to knowledge and culture
+Exec=z-library
+Icon=se.zlibrary-africa.zlibrary
+Categories=Utility;HardwareSettings;

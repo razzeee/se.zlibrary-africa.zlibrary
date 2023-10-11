@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>se.zlibrary-africa.zlibrary.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>zlibrary</name>
+  <developer_name></developer_name>
+  <summary>Your gateway to knowledge and culture</summary>
+  <description>
+  </description>
+  <keywords>
+    <keyword>library</keyword>
+    <keyword>book</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <url type="homepage">https://www.zlibrary-africa.se</url>
+  <screenshots>
+    <screenshot type="default">
+      <image></image>
+      <caption></caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="10.9.0" date="2023-01-28"></release>
+  </releases>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
+</component>
